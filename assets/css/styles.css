@@ -1,0 +1,390 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* CSS-змінні */
+:root {
+    --container-max: 1200px;          /* максимальна ширина контенту */          
+    --space-1: 0.25rem;               /* 4px */  
+    --space-2: 0.5rem;                /* 8px */  
+    --space-3: 0.75rem;               /* 12px */  
+    --space-4: 1rem;                  /* 16px */                  
+    --space-6: 1.5rem;                /* 24px */
+    --space-8: 2rem;                  /* 32px */
+
+    --radius-1: 4px;                  /* малий радіус */
+    --radius-2: 8px;                  /* середній радіус */  
+
+    --c-b: #f4f6f8;                 /* фон сторінки */
+    --c-surface: #ffffff;           /* фон карток/секцій */
+    --c-text: #333333;              /* основний текст */
+    --c-muted: #606368;             /* приглушений текст */
+    --c-border: #e3e7eb;            /* світла межа */    
+    --c-primary: #0d6efd;           /* базовий синій */  
+    --c-primary-600: #0b5ed7;       /* темніший синій для hover */
+    --c-accent: #ffcc00;            /* акцент для дрібних підсвіток */
+    --shadow-1: 0 2px 12px rgba(0,0,0,0.06); /* м'яка тінь */
+}
+
+/* Базова типографія та фон документа */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;                      
+    color: var(--c-text);
+    background: var(--c-bg);        
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--c-primary);
+    text-decoration: none;
+}
+a:hover,
+a:focus-visible {
+    text-decoration: underline;
+    outline: none;
+}
+
+
+/*
+--------------------------------------------------------------
+1) ХЕДЕР + НАВІГАЦІЯ (BEM: .header, .navigation)
+--------------------------------------------------------------
+*/
+
+.header {
+    background: var(--c-primary);
+    color: #fff;
+    padding: var(--space-6) var(--space-4);
+    text-align: center;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Навігація */
+.navigation__list {
+    display: inline-flex;
+    gap: var(--space-4);
+    margin-top: var(--space-3);
+}
+
+.navigation__link {
+    color: #fff;
+    font-weight: 600;
+    gap: var(--space-2) var(--space-3);
+    border-radius: var(--radius-1);
+}
+
+.navigation__link:hover,
+.navigation__link:focus-visible {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/*
+--------------------------------------------------------------
+2) ОСНОВНИЙ КОНТЕНТ (BEM: .main, .article)
+--------------------------------------------------------------
+*/
+
+.main {
+    max-width: var(--container-max);
+    margin: var(--space-8) auto;
+    padding: var(--space-6) var(--space-4);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-1);
+}
+
+.main__title {
+    margin: 0 0 var(--space-6);
+    font-size: 1.75rem;
+    line-height: 1.3;
+}
+
+.article + .article {
+    margin-top: var(--space-8);
+}
+
+.article__title {
+    margin: 0 0 var(--space-3);
+    font-size: 1.5rem;
+}
+
+.article__text {
+    margin: 0 0 var(--space-6)
+}
+
+
+/*
+--------------------------------------------------------------
+3) МЕДІА-БЛОК (BEM: .media)
+--------------------------------------------------------------
+*/
+
+.media {
+    margin: 0;
+}
+
+.media--framed {
+    background: #fafafa;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-2);
+    padding: var(--space-3);
+}
+
+.media__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-1);
+}
+
+.media__caption {
+    margin-top: var(--space-2);
+    color: var(--c-mutes);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+
+/*
+--------------------------------------------------------------
+4) ПЕРЕВАГИ / СЕРВІСИ / ТАБЛИЦЯ (BEM: .benefits, .services)
+--------------------------------------------------------------
+*/
+
+.benefits__title,
+.services__title {
+    margin: var(--space-6) 0 var(--space-3);
+    font-size: 1.25rem;
+}
+
+.services__table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-1);
+    overflow: hidden;
+}
+
+.services__header,
+.services__cell {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--c-border);
+}
+
+.services__header {
+    background: #f7f7f9;
+    text-align: left;
+    font-weight: 600;
+}
+
+.services__row:nth-child(even) .services__cell {
+    background-color: #fcfcfd;
+}
+
+
+/*
+--------------------------------------------------------------
+5) САЙДБАР (BEM: .sidebar)
+--------------------------------------------------------------
+*/
+
+.sidebar {
+    background: #f9f9f9;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-2);
+    padding: var(--space-6) var(--space-4);
+    margin: var(--space-6) 0;
+}
+
+.sidebar__title {
+    margin: 0 0 var(--space-3);
+    font-size: 1.25rem;
+}
+
+.sidebar_list {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.sidebar__item {
+    color: var(--c-text);
+}
+
+.sidebar__link {
+    color: var(--c-primary);
+}
+
+.sidebar__link:hover,
+.sidebar__link:focus-visible {
+    text-decoration: underline;
+}
+
+.sidebar--links {
+    background: #c3a9a9;
+}
+
+.sidebar--values {
+    background: #93bdca;
+}
+
+.sidebar--social {
+    background: #80b180;
+}
+
+
+/*
+--------------------------------------------------------------
+6) ФУТЕР (BEM: .footer)
+--------------------------------------------------------------
+*/
+
+.footer {
+    background: #2f3338;
+    color: #fff;
+    text-align: center;
+    padding: var(--space-6) var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.footer__text {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.footer__group--name {
+    color: var(--c-accent);
+    font-weight: 700;
+}
+
+
+/*
+--------------------------------------------------------------
+7) ФОРМА (BEM: .contact-form)
+--------------------------------------------------------------
+*/
+
+/* Обгортка форми */
+.contact-form {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: var(--space-6);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-1);
+}
+
+/* Рядок форми (лейбл + поле) */
+.contact-form__item {
+    display: grid;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+/* Пілпис до поля */
+.contact-form__label {
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Текстові поля і textarea: спільний стиль */
+.contact-form__input,
+.contact-form__textarea {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--c-text);
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-1);
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+/* Плейсхолдер — підказка у полі */
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Стан наведення (hover) */
+.contact-form__input:hover,
+.contact-form__textarea:hover {
+    border-color: #94a3b8;
+}
+
+/* Стан фокусв (клавіатура/клік): помітний, але не агресивний */
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    border-color: var(--c-primary);
+    box-shadow: 0 0 0 3px rgba(11,110,253,0.15);
+}
+
+/* Висота textarea за замовчуванням і можливість змінювати */
+.contact-form__textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+/* Валідація HTML5 (базова) */
+.contact-form__input:required:user-invalid,
+.contact-form__textarea:required:user-invalid {
+    border-color: #dc3545;
+}
+
+.contact-form__input:required:valid,
+.contact-form__textarea:required:valid {
+    border-color: #108754;
+}
+
+/* Кнопка відправки */
+.contact-form__button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    border: none;
+    border-radius: var(--radius-2);
+    background: var(--c-primary);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-1);
+    transition: background .2s ease, transform 05s ease;
+}
+
+.contact-form__button:hover,
+.contact-form__button:focus-visible {
+    background: var(--c-primary-600);
+}
+
+.contact-form__button:active {
+    transform: translateY(1px);
+}
+
+.contact-form__button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
