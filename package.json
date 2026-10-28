@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/AndriiVlas/web#readme",
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "autoprefixer": "^10.6.1",
     "postcss": "^8.5.31",
     "sass-embedded": "^1.105.2",
+    "tailwindcss": "^4.3.3",
     "vite": "^8.3.4",
     "vite-plugin-handlebars": "^2.0.3"
   }
