@@ -10,6 +10,7 @@ export default defineConfig({
         contacts: resolve(import.meta.dirname, 'contacts.html'),
     },
     resolve: { alias: { '@': resolve(import.meta.dirname, 'src') } },
+    base: "/web/",
     plugins: [
         tailwindcss(),
         handlebars({
@@ -20,8 +21,8 @@ export default defineConfig({
             ),
 
             context: {
-                siteName: 'Лабораторна 6',
-                labName: 'Лабораторна № 6',
+                siteName: 'Лабораторна 7',
+                labName: 'Лабораторна № 7',
             },
 
             reloadOnPartialChange: true,
