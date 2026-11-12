@@ -8,7 +8,7 @@
     --brand: var(--color-brand-500);
     --brand-600: var(--color-brand-600);
     --brand-100: var(--color-brand-100);
-    --fg: {ui.$fg};
+    --fg: #{ui.$fg};
     --fg-muted: #{ui.$fg-muted};
     --bg: #{ui.$bg};
     --surface: #{ui.$surface};
@@ -49,6 +49,6 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 
 a {
-  color: var(--brand); text-decoration: none;
+  text-decoration: none;
   &:hover, &:focus-visible { text-decoration: underline; }
 }
