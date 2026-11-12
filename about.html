@@ -1,4 +1,4 @@
-{{#> layout pageTitle="Про нас" studentGroup="6.1214-пі" studentEmail="example@gmail.com" }}
+{{#> layout pageTitle="Про нас" studentGroup="6.1214-пі" studentEmail="example@gmail.com" pageCode="about"}}
 <article class="about__article">
     <h2 class="about__article--title">Про нашу команду</h2>
     <p class="about__article--text">Ми — команда студентів, що створює навчальний веб-проєкт у межах курсу
@@ -24,5 +24,22 @@
         <dt class="history__item">2025</dt>
         <dd class="history__item">Запуск навчального лендингу</dd>
     </dl>
+</section>
+
+<section class="team">
+    <h2 class="team__title">Наша команда</h2>
+
+    <div class="team__list"></div>
+
+    <template id="employee-card-tpl">
+        <article class="card employee-card">
+            <img class="employee-card__photo" alt="" width="320" height="240" loading="lazy">
+            <div class="employee-card__body">
+                <h3 class="employee-card__name"></h3>
+                <p class="employee-card__role"></p>
+                <a class="btn-brand employee-card__cta" href="#" target="_blank" rel="noopener">Профіль</a>
+            </div>
+        </article>
+    </template>
 </section>
 {{/layout}}
