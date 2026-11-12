@@ -5,22 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Головна сторінка навчального лендингу: новини, послуги, переваги.">
-    <title>Лабораторна 7 — Про нас</title>
-    <link rel="icon" href="/web/assets/favicon-DcLT-SmM.ico">  <script type="module" crossorigin src="/web/assets/main-j7AgHtN4.js"></script>
-  <link rel="stylesheet" crossorigin href="/web/assets/main-DMGc76sh.css">
+    <title>Лабораторна 8 — Про нас</title>
+    <link rel="icon" href="/web/assets/favicon-DcLT-SmM.ico">  <script type="module" crossorigin src="/web/assets/main-StTUQptz.js"></script>
+  <link rel="stylesheet" crossorigin href="/web/assets/main-CCHSjQWK.css">
 </head>
 
-<body>
+<body data-page="about">
     <div class="layout">
         <header class="header">
-            <h1 class="header__title">Лабораторна № 7</h1>
-            <nav class="nav" aria-label="Головна навігація">
-                <ul class="nav__list">
-                    <li class="nav__item"><a class="nav__link" href="index.html" aria-current="page">Головна</a></li>
-                    <li class="nav__item"><a class="nav__link" href="about.html">Про нас</a></li>
-                    <li class="nav__item nav__item--cta"><a class="nav__link" href="contacts.html">Контакти</a></li>
-                </ul>
-            </nav>
+            <h1 class="header__title">Лабораторна № 8</h1>
+            <div class="flex justify-between border border-solid border-(--border) space-x-6">
+                <nav class="nav" aria-label="Головна навігація">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a class="nav__link" href="index.html" aria-current="page">Головна</a></li>
+                        <li class="nav__item"><a class="nav__link" href="about.html">Про нас</a></li>
+                        <li class="nav__item nav__item--cta"><a class="nav__link" href="contacts.html">Контакти</a></li>
+                    </ul>
+                </nav>
+                <button id="theme-toggle"
+                        class="
+                            p-5 mr-5 my-4 rounded-full
+                            bg-(--surface) hover:bg-(--brand-100)
+                            text-(--fg-muted) hover:text-(--fg)
+                            transition duration-300 ease-in-out
+                            focus:outline-none focus:ring-2 focus:ring-(--fg)
+                            border-0 cursor-pointer"
+                        type="button"
+                        aria-label="Переключити тему">
+                    <svg id="sun-icon" class="h-8 w-8 block dark:hidden" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4
+                    12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16.5
+                    12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
+                    </svg>
+                    <svg id="moon-icon" class="h-8 w-8 hidden dark:block" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118
+                    15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.585.732-3.755A9.726 9.726 0 002.25 12c0 5.385 4.365 9.75
+                    9.75 9.75s9.75-4.365 9.75-9.75c0-.85-.147-1.67-.418-2.438z" />
+                    </svg>
+                </button>
+            </div>
         </header>        <aside class="sidenav">
             <section class="sidebar sidebar--links" aria-label="Додаткова інформація">
                 <h3 class="sidebar__title">Корисні посилання</h3>
@@ -75,6 +100,23 @@
                     <dt class="history__item">2025</dt>
                     <dd class="history__item">Запуск навчального лендингу</dd>
                 </dl>
+            </section>
+            
+            <section class="team">
+                <h2 class="team__title">Наша команда</h2>
+            
+                <div class="team__list"></div>
+            
+                <template id="employee-card-tpl">
+                    <article class="card employee-card">
+                        <img class="employee-card__photo" alt="" width="320" height="240" loading="lazy">
+                        <div class="employee-card__body">
+                            <h3 class="employee-card__name"></h3>
+                            <p class="employee-card__role"></p>
+                            <a class="btn-brand employee-card__cta" href="#" target="_blank" rel="noopener">Профіль</a>
+                        </div>
+                    </article>
+                </template>
             </section>
         </main>
         <footer class="footer">
