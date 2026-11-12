@@ -1,3 +1,4 @@
+/*
 @media (prefers-color-scheme: dark) {
     :root {
         --bg:#0b1020;
@@ -13,9 +14,11 @@
     .sidebar { background: var(--surface); }
     .news-card__meta { background: color-mix(in srgb, var(--surface) 92%, #fff 8%); }
 }
+*/
 
-/*
 html.dark {
+    color-scheme: dark;
+
     --bg:#0b1020;
     --surface:#101528;
     --fg:#e7eaf3;
@@ -28,4 +31,3 @@ html.dark {
     .sidebar { background: var(--surface); }
     .news-card__meta { background: color-mix(in srgb, var(--surface) 92%, #fff 8%); }
 }
-*/
